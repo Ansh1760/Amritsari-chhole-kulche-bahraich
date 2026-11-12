@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-ivory: #F8F1E5;
+    --color-maroon: #6F1717;
+    --color-punjabi: #9B2920;
+    --color-gold: #D4A441;
+    --color-brown: #493024;
+    --color-charcoal: #211A16;
+  }
+
+  body {
+    background-color: #F8F1E5;
+    color: #211A16;
+    font-family: 'Outfit', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* Custom Luxury Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #F8F1E5;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #6F1717;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #D4A441;
+  }
+}
+
+@layer utilities {
+  /* Rich Gold Metallic Gradient */
+  .bg-gold-gradient {
+    background: linear-gradient(135deg, #ECC970 0%, #D4A441 50%, #A97A23 100%);
+  }
+
+  .text-gold-gradient {
+    background: linear-gradient(135deg, #ECC970 0%, #D4A441 50%, #B88528 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-maroon-gradient {
+    background: linear-gradient(135deg, #8F1E1E 0%, #6F1717 60%, #4D0E0E 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Subtle Traditional Indian Arch / Jali Motif Pattern */
+  .bg-punjabi-pattern {
+    background-color: #6F1717;
+    background-image: radial-gradient(rgba(212, 164, 65, 0.12) 1px, transparent 0);
+    background-size: 24px 24px;
+  }
+
+  .bg-ivory-pattern {
+    background-color: #F8F1E5;
+    background-image: radial-gradient(rgba(111, 23, 23, 0.05) 1px, transparent 0);
+    background-size: 20px 20px;
+  }
+
+  /* Butter Glisten Effect */
+  .butter-shine {
+    position: relative;
+    overflow: hidden;
+  }
+  .butter-shine::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+      60deg,
+      transparent 30%,
+      rgba(255, 255, 255, 0.25) 50%,
+      transparent 70%
+    );
+    transform: rotate(30deg);
+    animation: butterGleam 4s infinite ease-in-out;
+  }
+}
+
+@keyframes butterGleam {
+  0% { transform: translateX(-100%) rotate(30deg); }
+  50%, 100% { transform: translateX(100%) rotate(30deg); }
+}
+
