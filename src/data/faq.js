@@ -1,3 +1,5 @@
+import { RESTAURANT_DATA } from './restaurantData';
+
 /**
  * Centralized Frequently Asked Questions (FAQ) Data
  */
@@ -30,7 +32,7 @@ export const FAQ_DATA = {
     {
       id: 'faq-booking',
       question: 'How can I enquire about table availability or group orders?',
-      answer: 'You can call us directly at 07947141309 or use our WhatsApp Enquiry form on the Contact / Visit Us page for quick responses.'
+      answer: `You can call us directly at ${RESTAURANT_DATA.contact.phoneDisplay} or use our WhatsApp Enquiry form on the Contact / Visit Us page for quick responses.`
     }
   ]
 };

@@ -4,8 +4,16 @@
  * All fields are centralized and editable for quick updates.
  */
 
+const env = import.meta.env || {};
+
+const contactPhone = env.VITE_CONTACT_PHONE || '9721204065';
+const whatsappNumber = env.VITE_WHATSAPP_NUMBER || '919721204065';
+const whatsappLink = env.VITE_WHATSAPP_LINK || 'https://wa.me/919721204665';
+const geoLatitude = Number(env.VITE_GEO_LATITUDE) || 27.5400683;
+const geoLongitude = Number(env.VITE_GEO_LONGITUDE) || 81.571983;
+
 export const RESTAURANT_DATA = {
-  name: "Amritsari Chhole Kulche",
+  name: env.VITE_APP_NAME || "Amritsari Chhole Kulche",
   tagline: "The Royal Taste of Amritsar",
   subTagline: "Authentic Amritsari Chhole Kulche, Bringing Punjabi Flavours to Bahraich.",
   description: "Experience the legendary taste of authentic Amritsari clay tandoor kulchas, brushed with rich desi makhan, served with dark spiced pindi chhole and chilled seasoned raita in a royal, air-conditioned family dining ambience.",
@@ -21,18 +29,22 @@ export const RESTAURANT_DATA = {
   },
 
   contact: {
-  phone: "9721204065",
-  phoneDisplay: "9721204065",
-  phoneTel: "tel:+919721204065",
-  whatsappNumber: "919721204065",
-  whatsappLink: "https://wa.me/919721204665"
-},
+    phone: contactPhone,
+    phoneDisplay: contactPhone,
+    phoneTel: `tel:+91${contactPhone}`,
+    whatsappNumber,
+    whatsappLink
+  },
 
   geo: {
-    latitude: 27.5400683,
-    longitude: 81.571983,
-    googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=27.5400683,81.571983",
-    embedUrl: "https://maps.google.com/maps?q=27.5400683,81.571983&hl=en&z=16&output=embed"
+    latitude: geoLatitude,
+    longitude: geoLongitude,
+    googleMapsUrl:
+      env.VITE_GOOGLE_MAPS_URL ||
+      `https://www.google.com/maps/search/?api=1&query=${geoLatitude},${geoLongitude}`,
+    embedUrl:
+      env.VITE_GOOGLE_MAPS_EMBED_URL ||
+      `https://maps.google.com/maps?q=${geoLatitude},${geoLongitude}&hl=en&z=16&output=embed`
   },
 
   // Centralized Hero Section Content
